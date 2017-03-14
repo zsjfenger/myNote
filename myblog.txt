@@ -1,0 +1,56 @@
+博客页面设计
+
+1、页面概要
+   博客主页面
+       文章标题列表，超链接
+           列表编写思路
+              取出数据库中所有文章对象
+	      将文字对象打包成列表，传递到前端
+	      前端页面把文章以标题超链接的形式逐个列出 
+       发表博客按钮，超链接
+   博客文章内容页面
+   博客撰写页面
+
+
+2、模板语句
+   模板For循环
+   {% for xx in xxs %}
+   HEML语句
+   {% endfor %}
+
+
+
+
+
+
+
+
+
+5、超链接目标地址
+   href后面是目标地址
+   template中可以用"{% url 'app_name:url_name' param %}"
+   其中app_name和url_name都在URL中配置
+
+6、再配url
+   url函数的名称参数
+      根urls，写在include（）的第二个参数位置，namespace='blog'
+      应用下则写在url（）的第三个参数位置，name=‘article’
+      主要取决于是否使用include引用了另一个url配置文件
+
+7、编辑页面
+   标题编辑栏
+   文章内容编辑区域
+   提交按钮
+
+8、编辑响应函数
+   使用request.POST['参数名']获取表单数据
+   models.Article.object.create(title,content)
+
+9、两个编辑页面
+   新文章为空，修改文章内容
+   修改文章页面有文章对象
+   文章的ID
+
+10、修改数据
+   article.title = title
+   article.save()
