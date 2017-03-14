@@ -1,0 +1,35 @@
+1、Templates过滤器
+	写在模板中，属于Django模板语言
+	可以修改模板中的变量，从而显示不同的内容
+2、使用
+	{{value|filter}}
+        {{list_nums|length}}
+	过滤器可叠加：{{value|filter1|filter2|...}}
+
+3、Django Shell
+	它是一个Python的交互式命令行程序
+	它自动引入了我们的项目环境
+	我们可以使用它与我们的项目进行交互
+	python manage.py shell   启动Django shell
+	from blog.models import Article
+	Article.objects.all()
+4、用法
+	我们可以使用Django shell来进行一些调试工作
+	测试未知的方法
+
+5、Admin
+	
+	创建Admin配置类
+	   class ArticleAdmin(admin.ModelAdmin)
+	   注册：admin.site.register(Article,ArticleAdmin)
+	显示其他字段
+	   list_display = ('title', 'content')
+	   list_display同时支持tuple和list
+	过滤器
+	   list_filter = ('pub_time', )
+
+
+
+
+
+http://coding.imooc.com/class/78.html
